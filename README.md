@@ -9,13 +9,13 @@ Create a project folder in your linux home directory to store your projects for 
 
 ### Setup  Instructions
 1. Clone Repo: git clone ```git@github.com:kaw393939/module2_is601.git```
-2. Enter the directory: cd module2_is601
-3. Create Python Virtual Environment: python -m venv venv 
-4. Activate Python Virtual Environment: source venv/bin/activate
-5. Install dependencies:  pip install -r requirements.txt
-6. Run the tests: pytest
-7. Run the program: python main.py or python3 main.py
-8. Open in vscode type: code .
+2. Enter the directory: ```cd module2_is601```
+3. Create Python Virtual Environment: ```python -m venv venv``` 
+4. Activate Python Virtual Environment: ```source venv/bin/activate```
+5. Install dependencies:  ```pip install -r requirements.txt```
+6. Run the tests: ```pytest```
+7. Run the program: ```python3 main.py or python3 main.py```
+8. Open in vscode type: ```code .```
 
 
 [Unit Content - DRAFT WORK IN PROGRESS](unit_content_draft.md)
