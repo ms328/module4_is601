@@ -6,6 +6,9 @@ Create a project folder in your linux home directory to store your projects for 
 ### Prerequisites:
 1. Python 3.10+ installed
 2. Install vscode WSL2 extension (for windows) or add vscode to your path (mac). You want to be able to just type code . and the project will open in vscode automaticly.
+3. VS Code Installed
+4. WSL Extension Installed https://code.visualstudio.com/docs/remote/wsl-tutorial
+5. Live Server Extension Installed  https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 
 ### Setup  Instructions
 1. Clone Repo: git clone ```git@github.com:kaw393939/module2_is601.git```
