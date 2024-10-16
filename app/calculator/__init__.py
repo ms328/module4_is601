@@ -15,7 +15,7 @@ def calculator():
     """Basic REPL calculator that performs addition, subtraction, multiplication, and division."""
     
     # First, we print a message to welcome the user to the calculator.
-    print("Welcome to the calculator REPL! Type 'exit' to quit.")
+    print("Welcome to the calculator REPL! Type 'exit' to quit")
     
     # This is the part where the calculator keeps running. The 'while True' means we are going to keep 
     # doing something (in this case, asking the user for input) until we tell it to stop.
