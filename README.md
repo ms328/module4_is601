@@ -1,7 +1,10 @@
 # Module 2 - Learning the Development Python Development Environment and Automated Testing
 
 ## Install Instructions
-Create a project folder in your linux home directory to store your projects for the course.  Follow the provided instruction and watch the video for the unit.  
+Create a project folder in your linux home directory to store your projects for the course.  Follow the provided instruction and watch the video for the unit. 
+
+- Video 1 https://youtu.be/dCiLpXdjDks
+- Video 2 https://youtu.be/wUhRow0kjis
 
 ### Prerequisites:
 1. Python 3.10+ installed
