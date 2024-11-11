@@ -104,9 +104,9 @@ To enhance your understanding of the codebase, please read the following article
 2. **[Understanding Design Patterns: Factory Pattern](https://refactoring.guru/design-patterns/factory-method)**
 3. **[Mastering Error Handling in Python](https://realpython.com/python-exceptions/)**
 4. **[Comprehensive Guide to Testing in Python with pytest](https://realpython.com/pytest-python-testing/)**
-5. **[Achieving 100% Test Coverage in Python](https://pytest-cov.readthedocs.io/en/latest/)**
-6. **[DRY (Don't Repeat Yourself) Principle in Python](https://www.makeuseof.com/python-dry-principle/)**
-7. **[LBYL vs EAFP: Python's Error Handling Paradigms](https://realpython.com/python-lbyl-vs-eafp/)**
+6. **[LBYL vs EAFP: Python's Error Handling Paradigms](https://realpython.com/python-lbyl-vs-eafp/)**
+7. **[Achieving 100% Test Coverage in Python - Reference Manual on Coverage](https://pytest-cov.readthedocs.io/en/latest/)**
+
 
 ### Watch
 
