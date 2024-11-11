@@ -1,4 +1,4 @@
-# Module 2 - Learning the Development Python Development Environment and Automated Testing
+# Module 4: Advanced Object-Oriented Programming (OOP) and Comprehensive Testing in Python
 
 ## Install Instructions
 Create a project folder in your linux home directory to store your projects for the course.  Follow the provided instruction and watch the video for the unit. 

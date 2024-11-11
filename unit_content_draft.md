@@ -1,150 +1,290 @@
-# Module 2: Introduction to VSCode, Python, and Testing
+# Module 4: Advanced Object-Oriented Programming (OOP) and Comprehensive Testing in Python
 
 ## Module Overview
-This module introduces students to integrated development environments (IDEs), specifically Visual Studio Code (VSCode), and how to set up a Python development environment. Students will learn to use Python with pytest for testing, create virtual environments, and understand basic Python programming concepts like functions and variables. By the end of this module, students will be able to set up a project using GIT and GitHub that includes a simple calculator application, with automated testing using GitHub Actions.
+Welcome to **Module 4**, where you will elevate your Python programming skills by delving deeper into **Object-Oriented Programming (OOP)** and mastering **comprehensive testing techniques** using `pytest`. Building upon your foundational knowledge from previous modules, this module introduces more sophisticated OOP concepts and emphasizes the importance of achieving complete test coverage to ensure code reliability and quality.
 
-### Why VSCode, Python, and Testing?
-VSCode is a powerful, open-source IDE that supports many programming languages and has numerous extensions to enhance development productivity. Python is a versatile programming language widely used in various fields, including web development, data science, and automation. Testing is crucial to ensure code reliability and maintainability, and pytest is a popular testing framework for Python. GitHub Actions allow automated workflows to build, test, and deploy code, integrating continuous integration/continuous deployment (CI/CD) practices.
+Your primary textbook for this module is the provided codebase, organized with the following folder structure:
 
-### Learning Outcomes
-- Utilize GIT for version control and collaborative development.
-- Create Python applications with automated testing.
+```
+app/
+├── calculator/
+│   └── __init__.py
+├── calculation/
+│   └── __init__.py
+├── operation/
+│   └── __init__.py
+tests/
+├── test_calculations.py
+├── test_calculator.py
+└── test_operations.py
+```
 
-## Module 2 Learning Pathway
+Each `__init__.py` file within the `app/` subdirectories contains the relevant code for that module. The `tests/` directory includes unit and parameterized tests to verify the functionality of your application.
+
+By studying and interacting with this code, you'll gain hands-on experience in implementing advanced OOP principles, designing robust command-line interfaces, applying the DRY (Don't Repeat Yourself) principle, handling errors gracefully, and ensuring code reliability through thorough testing.
+
+## Why Advanced OOP and Comprehensive Testing?
+**Object-Oriented Programming (OOP)** is a cornerstone of modern software development, enabling developers to create modular, reusable, and scalable code. By leveraging advanced OOP concepts such as inheritance, encapsulation, and polymorphism, you can design more sophisticated applications that are easier to maintain and extend.
+
+**Comprehensive Testing** is essential for ensuring the reliability and correctness of your applications. Utilizing testing frameworks like `pytest` allows you to write extensive unit and parameterized tests, achieving high test coverage that guarantees all parts of your code are functioning as intended. Striving for **100% test coverage** minimizes the risk of hidden bugs and enhances overall code quality.
+
+## Learning Outcomes
+By the end of this module, you will be able to:
+
+- **Apply Advanced OOP Principles:** Utilize inheritance, encapsulation, and polymorphism to create well-structured Python programs.
+- **Develop Robust Command-Line Applications:** Enhance your REPL-based applications with maintainable and scalable code structures.
+- **Implement Comprehensive Error Handling:** Design and implement sophisticated error handling strategies to create resilient applications.
+- **Conduct Thorough Testing:** Write extensive unit and parameterized tests using `pytest` to ensure all code paths are tested.
+- **Achieve 100% Test Coverage:** Utilize coverage tools to measure and ensure complete test coverage of your application.
+- **Optimize Test Coverage:** Learn how to handle specific lines of code that may require coverage exceptions (e.g., lines with `pass` or `continue`).
+
+## Module 4 Learning Pathway
 
 ### Recall
 
-**Title:** Prior Experience with Python and VSCode  
+**Title:** Reflecting on Your OOP and Testing Experiences  
 **Grading Type:** Points  
 **Instructions:** 
-- Participate in a discussion forum to share your previous experiences with Python and VSCode.
-- Discuss any challenges you faced and how you resolved them.
-- This activity will help gauge your familiarity with these tools and set the stage for the new material.
+- **Discussion Forum:** Share your experiences with Object-Oriented Programming and testing in Python.
+  - Discuss any projects where you applied OOP principles.
+  - Reflect on the challenges you faced while writing tests and achieving test coverage.
+- **Quiz:** Complete a short quiz to assess your current understanding of advanced OOP concepts and testing methodologies.
+- **Purpose:** This activity will help you recall and articulate your prior experiences, setting the stage for deeper learning in this module.
 
 ### Read
 
-1. **Article: "Getting Started with Visual Studio Code"**
-   - URL: [Getting Started with VSCode](https://code.visualstudio.com/docs/introvideos/basics)
-   - Purpose: To guide you through the installation and basic usage of VSCode.
+Your **primary textbook** for this module is the provided codebase. Each `__init__.py` file within the `app/` subdirectories is thoroughly commented to explain advanced OOP concepts, error handling strategies, and testing best practices. Here’s an overview of the key components:
 
-2. **Article: "Python and VSCode"**
-   - URL: [Python in VSCode](https://code.visualstudio.com/docs/python/python-tutorial)
-   - Purpose: To help you set up Python development in VSCode.
+1. **`app/calculator/__init__.py`**
+   - **Purpose:** Implements a professional-grade calculator using Python’s REPL (Read-Eval-Print Loop) pattern.
+   - **Key Concepts:** 
+     - Advanced control structures (`while` loops, `if-elif-else` statements)
+     - User input handling
+     - Comprehensive error handling using `try-except` blocks
+     - Modular code organization by importing from `operation.py` and `calculation.py`
+     - Demonstrates OOP paradigms: LBYL (Look Before You Leap) and EAFP (Easier to Ask Forgiveness than Permission)
 
-3. **Article: "Virtual Environments in Python"**
-   - URL: [Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
-   - Purpose: To introduce you to creating and using virtual environments in Python.
+2. **`app/operation/__init__.py`**
+   - **Purpose:** Contains the `Operation` class with static methods for basic arithmetic operations.
+   - **Key Concepts:**
+     - **Classes and Static Methods:** Encapsulate related functionalities within a class using static methods.
+     - **Encapsulation and Abstraction:** Group related functions together to enhance code organization and reusability.
+     - **Input Validation and Error Raising:** Implement robust input validation and error handling within class methods.
 
-4. **Article: "Introduction to pytest"**
-   - URL: [Introduction to pytest](https://docs.pytest.org/en/stable/getting-started.html)
-   - Purpose: To familiarize you with the basics of testing Python code using pytest.
+3. **`app/calculation/__init__.py`**
+   - **Purpose:** Defines the `Calculation` abstract base class, concrete calculation classes (`AddCalculation`, `SubtractCalculation`, `MultiplyCalculation`, `DivideCalculation`), and the `CalculationFactory` for creating calculation instances.
+   - **Key Concepts:**
+     - **Inheritance and Polymorphism:** Create a hierarchy of calculation classes that inherit from an abstract base class.
+     - **Factory Design Pattern:** Implement a factory to manage the creation of calculation instances.
+     - **String Representations:** Define `__str__` and `__repr__` methods for meaningful string representations of objects.
 
-5. **Article: "GitHub Actions: Basics"**
-   - URL: [GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
-   - Purpose: To understand the basics of GitHub Actions for CI/CD.
-_____NEW_______
+4. **`tests/test_calculations.py`**
+   - **Purpose:** Provides unit tests for the calculation classes and the `CalculationFactory`.
+   - **Key Concepts:**
+     - **Parameterized Testing:** Use `pytest` to run the same test logic with different input values, enhancing test coverage.
+     - **Mocking:** Utilize `unittest.mock` to simulate and test interactions between classes.
+     - **Exception Handling:** Test that methods correctly raise and handle exceptions.
 
-6. **Article: "Building Command-Line Applications in Python"**
-   - URL: [Command-Line Applications in Python](https://realpython.com/command-line-interfaces-python-argparse/)
-   - Purpose: To learn techniques for creating interactive command-line applications.
+5. **`tests/test_calculator.py`**
+   - **Purpose:** Contains unit tests for the calculator REPL application.
+   - **Key Concepts:**
+     - **Simulating User Input:** Use `monkeypatch` to simulate user interactions within the REPL.
+     - **Capturing Output:** Verify that the correct outputs are displayed based on user inputs.
+     - **Negative Testing:** Ensure that the application gracefully handles invalid inputs and unexpected errors.
 
-7. **Article: "DRY (Don't Repeat Yourself) Principle in Python"**
-   - URL: [DRY Principle](https://www.makeuseof.com/python-dry-principle/)
-   - Purpose: To understand and apply the DRY principle for writing maintainable and efficient Python code.
+6. **`tests/test_operations.py`**
+   - **Purpose:** Includes unit and negative tests for the `Operation` class's arithmetic methods.
+   - **Key Concepts:**
+     - **Edge Case Testing:** Test arithmetic methods with various input scenarios, including zero and negative numbers.
+     - **Type Validation:** Ensure that methods handle invalid input types appropriately by raising exceptions.
 
-8. **Article: "Comprehensive Guide to Testing in Python"**
-   - URL: [Testing in Python](https://realpython.com/python-testing/)
-   - Purpose: To learn comprehensive testing strategies using pytest.
-
+**Supplementary Articles:**
+To enhance your understanding of the codebase, please read the following articles:
+1. **[Advanced Object-Oriented Programming in Python](https://realpython.com/python3-object-oriented-programming/)**
+2. **[Understanding Design Patterns: Factory Pattern](https://refactoring.guru/design-patterns/factory-method)**
+3. **[Mastering Error Handling in Python](https://realpython.com/python-exceptions/)**
+4. **[Comprehensive Guide to Testing in Python with pytest](https://realpython.com/pytest-python-testing/)**
+5. **[Achieving 100% Test Coverage in Python](https://pytest-cov.readthedocs.io/en/latest/)**
+6. **[DRY (Don't Repeat Yourself) Principle in Python](https://www.makeuseof.com/python-dry-principle/)**
+7. **[LBYL vs EAFP: Python's Error Handling Paradigms](https://realpython.com/python-lbyl-vs-eafp/)**
 
 ### Watch
 
-1. **Video: "Introduction to VSCode" (15 minutes)**
-   - Purpose: To provide an overview of VSCode, its features, and how to set it up for Python development.
-
-2. **Video: "Python and Testing with pytest" (15 minutes)**
-   - Purpose: To demonstrate setting up Python, creating virtual environments, and writing tests using pytest.
-
-3. **Video: "Setting Up GitHub Actions" (15 minutes)**
-   - Purpose: To provide a visual guide to setting up GitHub Actions for automated testing.
+Engage with the following instructional videos to reinforce the concepts covered in the codebase and readings:
+1. **Video: "Advanced OOP in Python" (20 minutes)**
+   - **Purpose:** Dive deeper into OOP concepts such as inheritance, polymorphism, and the factory design pattern.
+2. **Video: "Comprehensive Testing with pytest" (20 minutes)**
+   - **Purpose:** Learn how to write effective unit and parameterized tests using `pytest`, achieving high test coverage.
+3. **Video: "Implementing the Factory Pattern in Python" (15 minutes)**
+   - **Purpose:** Understand and implement the factory design pattern to manage object creation.
+4. **Video: "Error Handling Best Practices in Python" (15 minutes)**
+   - **Purpose:** Explore advanced error handling techniques to create resilient Python applications.
+5. **Video: "Achieving 100% Test Coverage in Python" (15 minutes)**
+   - **Purpose:** Learn how to measure and attain complete test coverage for your Python projects.
 
 ### Review
 
-1. **Resource: VSCode Cheat Sheet**
-   - [VSCode Cheat Sheet](https://vscodecandothat.com/)
-   - Purpose: To provide you with a quick reference for using VSCode.
-
-2. **Resource: Python Basics Cheat Sheet**
-   - [Python Basics](https://www.pythonsheets.com/)
-   - Purpose: To provide a quick reference for basic Python syntax and functions.
-
-3. **Resource: pytest Cheat Sheet**
-   - [pytest Cheat Sheet](https://www.cheatography.com/oleksii/cheat-sheets/pytest/)
-   - Purpose: To offer a quick reference for writing and running tests using pytest.
+Utilize the following cheat sheets as quick references to aid your study and project development:
+1. **[Advanced OOP Cheat Sheet](https://realpython.com/python-cheat-sheet/)**
+   - **Purpose:** Offers a quick reference for advanced OOP concepts and syntax in Python.
+2. **[pytest Cheat Sheet](https://realpython.com/python-pytest/)**
+   - **Purpose:** Provides essential commands and configurations for writing and running tests with `pytest`.
+3. **[Factory Design Pattern Cheat Sheet](https://refactoring.guru/design-patterns/factory-method/python/example)**
+   - **Purpose:** Quick reference for implementing the factory design pattern in Python.
+4. **[Error Handling Cheat Sheet](https://www.pythonsheets.com/notes/python-exceptions.html)**
+   - **Purpose:** Comprehensive guide to Python's error handling mechanisms.
+5. **[Test Coverage Cheat Sheet](https://pytest-cov.readthedocs.io/en/latest/)**
+   - **Purpose:** Quick reference for measuring and managing test coverage in Python projects.
 
 ### Submit
 
-**Activity Type:** Hands-on Assignment  
+**Activity Type:** Advanced Hands-on Assignment  
 
-**Activity Title:** Calculator Project with Automated Tests  
+**Activity Title:** Professional Calculator Command-Line Application with 100% Test Coverage  
 
 **Grading Type:** Points  
 
-**Submission Instructions:** Submit a link to your repository on Canvas.
+**Submission Instructions:** Submit a link to your GitHub repository containing the project.
 
 **Instructions:** 
-- Create a new Git repository locally and a repository on GitHub. You will upload/push your local repo to GitHub.
-- Set up a Python project in VSCode.
-- Create a virtual environment for your project.
-- Write a simple command line calculator application that includes functions for addition, subtraction, multiplication, and division.
-- Write tests for each calculator function using pytest.
-- Configure GitHub Actions to run your tests automatically on each push to the repository.
-- Push your code and configuration to GitHub and ensure that GitHub Actions runs your tests successfully.
+- **Repository Setup:**
+  - Initialize a new Git repository locally and create a corresponding repository on GitHub.
+  - Set up a Python project in your preferred IDE with a well-structured directory layout, following the provided folder structure (`app/calculator/__init__.py`, `app/calculation/__init__.py`, `app/operation/__init__.py`, and `tests/` directory).
+  - Create and activate a virtual environment for your project.
+  
+- **Application Development:**
+  - Develop a professional-grade calculator command-line application with the following features:
+    - **REPL Interface:** Implement a Read-Eval-Print Loop for continuous user interaction.
+    - **Arithmetic Operations:** Allow users to perform addition, subtraction, multiplication, and division.
+    - **User Prompts:**
+      - Prompt for the desired operation and the numbers to operate on.
+      - Provide clear instructions and feedback to the user.
+    - **Input Validation:** Validate user inputs to ensure they follow the expected format and handle invalid inputs gracefully.
+    - **Error Handling:** 
+      - Implement comprehensive error handling to manage invalid inputs and exceptional scenarios (e.g., division by zero).
+      - Demonstrate both LBYL (Look Before You Leap) and EAFP (Easier to Ask Forgiveness than Permission) paradigms within your error handling strategies.
+    - **Calculation Management:** 
+      - Use the `CalculationFactory` to create calculation instances based on user input.
+      - Maintain a history of calculations performed during the session.
+      - Implement special commands (`help`, `history`, `exit`) to enhance user experience.
 
-**Grading Expectations:** Completeness and accuracy of the calculator application and tests, proper use of GIT commands, successful setup of GitHub Actions for automated testing, and correct implementation of Python virtual environments.
+- **Best Practices:**
+  - **DRY Principle:** Apply the DRY (Don't Repeat Yourself) principle and other best practices to ensure your code is maintainable and efficient.
+  - **Modular Design:** Organize your code into modules and classes to enhance readability and reusability.
+  
+- **Testing:**
+  - **Unit Tests:** 
+    - Write comprehensive unit tests using `pytest` to verify the functionality of individual components (e.g., arithmetic operations, calculation classes).
+    - Ensure that each method and function behaves as expected under various scenarios.
+  - **Parameterized Tests:** 
+    - Implement parameterized tests in `tests/test_calculations.py` and `tests/test_operations.py` to cover multiple input scenarios efficiently.
+    - Achieve extensive test coverage by testing both positive and negative cases.
+  - **Test Coverage:** 
+    - Use coverage tools (e.g., `pytest-cov`) to measure your test coverage.
+    - **Achieve 100% test coverage**, ensuring that all lines of code, branches, and edge cases are tested.
+    - **Handling Coverage Exceptions:** 
+      - Some lines of code, such as those containing `pass` or `continue`, may not be covered by tests. Research how to use coverage comments (e.g., `# pragma: no cover`) to intentionally ignore these lines without affecting overall coverage metrics.
+  
+- **Documentation:**
+  - Create detailed documentation, including a `README.md` file with setup and usage instructions.
+  - Document your code with meaningful comments and docstrings to enhance readability and maintainability.
+  
+- **Version Control & CI:**
+  - **Push Code to GitHub:**
+    - Ensure your code follows best practices for code organization and documentation.
+    - Commit changes with clear and descriptive messages.
+  - **Configure GitHub Actions:**
+    - Set up GitHub Actions to automatically run your tests and measure test coverage on each push to the repository.
+    - **Enforce 100% Test Coverage:** 
+      - Configure your CI pipeline to check for 100% test coverage. If the coverage is below 100%, the build should fail, prompting you to add the necessary tests.
+      - Example GitHub Actions workflow file (`.github/workflows/python-app.yml`):
+        ```yaml
+        name: Python application
+
+        on:
+          push:
+            branches: [ main ]
+          pull_request:
+            branches: [ main ]
+
+        jobs:
+          build:
+
+            runs-on: ubuntu-latest
+
+            steps:
+            - uses: actions/checkout@v2
+            - name: Set up Python 3.x
+              uses: actions/setup-python@v2
+              with:
+                python-version: '3.x'
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install pytest pytest-cov
+            - name: Run tests with coverage
+              run: |
+                pytest --cov=app tests/
+            - name: Check coverage
+              run: |
+                coverage report --fail-under=100
+        ```
+      - **Handling Coverage Exceptions:** 
+        - In your code, add comments like `# pragma: no cover` to lines that are intentionally excluded from coverage metrics (e.g., lines with `pass` or `continue`). This ensures that your coverage report accurately reflects the test coverage without being penalized for these lines.
+        - Example:
+          ```python
+          if some_condition:
+              pass  # pragma: no cover
+          ```
+
+**Grading Expectations:** 
+- **Functionality:** Completeness and accuracy of the calculator command-line application, including all specified features.
+- **User Interface:** Proper implementation of the REPL pattern and a user-friendly interface that handles user inputs gracefully.
+- **Code Quality:** Efficient use of Python control structures, adherence to the DRY principle, and professional coding practices.
+- **Error Handling:** Comprehensive error handling mechanisms that manage invalid inputs and exceptional scenarios effectively.
+- **Testing:** 
+  - Thorough unit and parameterized testing using `pytest`.
+  - Achieving **100% test coverage**, ensuring all code paths are tested.
+- **Documentation:** Well-structured code with comprehensive documentation, including a clear and informative `README.md`.
+- **Automation:** Successful setup of GitHub Actions to automatically run your tests and enforce 100% test coverage, ensuring code quality on every commit.
 
 **Alignment:** 
-- Utilize GIT for version control and collaborative development.
-- Create Python applications with automated testing.
+- Implement advanced Python control structures and OOP principles effectively in a command-line application.
+- Apply the DRY principle and other best practices for writing maintainable and efficient Python code.
+- Develop a command-line application using the REPL pattern with robust error handling.
+- Implement comprehensive unit and parameterized tests for Python applications using `pytest`.
+- Achieve and enforce **100% test coverage** through Continuous Integration with GitHub Actions, including handling coverage exceptions where necessary.
 
 ### Reflect
 
-**Title:** Module 2 Reflection  
+**Title:** Module 4 In-Depth Reflection  
 **Grading Type:** Points  
-**Instructions:** 
-- Write a brief reflection (150-200 words) on your experience setting up the Python development environment and writing tests.
-- Discuss how confident you feel using the tools and any areas where you need further clarification or support.
-- This activity aims to encourage metacognition and connect new knowledge with prior experiences.
+**Instructions:**
+- **Reflection Essay:** Compose a comprehensive reflection (300-400 words) on your experience developing the professional calculator command-line application.
+  - **Application of Concepts:** Analyze how the advanced OOP principles and comprehensive testing techniques learned in this module can be applied to real-world programming scenarios.
+  - **Challenges and Solutions:** Discuss any challenges you encountered during the project, particularly in implementing OOP concepts or achieving full test coverage, and the strategies you used to overcome them.
+  - **Self-Evaluation:** Evaluate your current level of confidence in using advanced OOP and testing tools. Identify areas where you feel proficient and areas where you need further practice or support.
+- **Purpose:** This activity aims to encourage deep metacognition and help you connect new knowledge with prior experiences and future applications.
 
 ### Quiz
 
-**Title:** VSCode, Python, and Testing Basics Quiz  
+**Title:** Advanced Python Programming and Comprehensive Testing Quiz  
 **Grading Type:** Points  
-**Instructions:** 
-- Complete a quiz covering the key concepts and commands introduced in this module.
-- The quiz will test your understanding of setting up VSCode, using Python and virtual environments, writing tests with pytest, and configuring GitHub Actions.
-- Review the provided cheat sheets and tutorials before taking the quiz.
+**Instructions:**
+- **Comprehensive Assessment:** Complete a comprehensive quiz covering the advanced OOP concepts, error handling strategies, and testing methodologies introduced in this module.
+  - **Topics Covered:** 
+    - Advanced Object-Oriented Programming (inheritance, polymorphism, encapsulation)
+    - Factory Design Pattern
+    - Error Handling Paradigms (LBYL vs EAFP)
+    - Writing Unit and Parameterized Tests with `pytest`
+    - Achieving and Enforcing Test Coverage
+    - Handling Coverage Exceptions
+  - **Question Types:** The quiz will include multiple-choice, short answer, and code analysis questions to thoroughly evaluate your comprehension and application of the module's content.
+- **Preparation:** 
+  - Review all provided materials, including the codebase, supplementary articles, instructional videos, and cheat sheets.
+  - Ensure you understand how to implement and test advanced OOP concepts.
+  - Familiarize yourself with using coverage tools and handling coverage exceptions in `pytest`.
 
-### Additional Information
+---
 
-#### Installing Python on Mac
-Mac users will need to install Python and manage packages. Follow these steps:
-
-1. **Install Python:**
-   - Open the Terminal application.
-   - Paste the following command and press Enter:
-     ```sh
-     brew install python
-     ```
-   - Follow the on-screen instructions to complete the installation.
-
-2. **Verify the Installation:**
-   - Type the following command and press Enter:
-     ```sh
-     python3 --version
-     ```
-   - You should see the installed version of Python.
-
-3. **Install VSCode:**
-   - Download and install VSCode from the official website: [Visual Studio Code](https://code.visualstudio.com/).
-   - Follow the on-screen instructions to complete the installation.
+This updated module leverages the provided codebase as your primary textbook, allowing you to learn by doing. By engaging with the well-commented code, completing hands-on assignments with stringent testing requirements, and reflecting on your learning process, you will build a strong foundation in advanced Object-Oriented Programming and comprehensive testing in Python. Embrace the opportunity to write clean, efficient, and thoroughly tested code, ensuring high-quality applications through **100% test coverage** and optimized testing strategies.
