@@ -30,13 +30,8 @@ By studying and interacting with this code, you'll gain hands-on experience in i
 
 ## Learning Outcomes
 By the end of this module, you will be able to:
-
-- **Apply Advanced OOP Principles:** Utilize inheritance, encapsulation, and polymorphism to create well-structured Python programs.
-- **Develop Robust Command-Line Applications:** Enhance your REPL-based applications with maintainable and scalable code structures.
-- **Implement Comprehensive Error Handling:** Design and implement sophisticated error handling strategies to create resilient applications.
-- **Conduct Thorough Testing:** Write extensive unit and parameterized tests using `pytest` to ensure all code paths are tested.
-- **Achieve 100% Test Coverage:** Utilize coverage tools to measure and ensure complete test coverage of your application.
-- **Optimize Test Coverage:** Learn how to handle specific lines of code that may require coverage exceptions (e.g., lines with `pass` or `continue`).
+- CLO 6: Implement object-oriented programming principles in Python.
+- CLO 7: Apply professional terminology and concepts related to web systems development.
 
 ## Module 4 Learning Pathway
 
