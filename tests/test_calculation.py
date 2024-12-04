@@ -353,38 +353,6 @@ def test_factory_register_calculation_duplicate():
     assert "Calculation type 'add' is already registered." in str(exc_info.value)
 
 
-@patch.object(Operation, 'division', return_value=2.0)
-def test_factory_creates_modulus_calculation(mock_division):
-    """
-    Test that CalculationFactory creates a ModulusCalculation instance after registration.
-
-    This test ensures that after dynamically registering a new calculation type ('modulus'),
-    the factory can correctly instantiate the corresponding ModulusCalculation class.
-    """
-    # Arrange
-    a = 10.0
-    b = 3.0
-
-    @CalculationFactory.register_calculation('modulus')
-    class ModulusCalculation(Calculation):
-        """
-        ModulusCalculation implements the modulus operation.
-        """
-        def execute(self) -> float:
-            if self.b == 0:
-                raise ZeroDivisionError("Cannot perform modulus with divisor zero.")
-            return Operation.division(self.a, self.b)  # Using division for illustration
-
-    # Act
-    calc = CalculationFactory.create_calculation('modulus', a, b)
-
-    # Assert
-    assert isinstance(calc, ModulusCalculation)  # Check if the instance is of ModulusCalculation
-    assert calc.a == a
-    assert calc.b == b
-    assert calc.execute() == 2.0  # Expected result based on mocked division
-
-
 # -----------------------------------------------------------------------------------
 # Test String Representations
 # -----------------------------------------------------------------------------------

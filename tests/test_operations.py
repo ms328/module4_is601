@@ -360,3 +360,5 @@ def test_operations_invalid_input_types(calc_method, a, b, expected_exception):
     # Act & Assert
     with pytest.raises(expected_exception):
         calc_method(a, b)
+
+

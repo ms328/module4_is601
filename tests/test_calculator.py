@@ -339,7 +339,7 @@ def test_calculator_unsupported_operation(monkeypatch, capsys):
     - Assert: Verify that the appropriate error message is displayed.
     """
     # Arrange
-    user_input = 'power 2 3\nexit\n'  # Changed 'modulus' to 'power'
+    user_input = 'modulus 2 3\nexit\n'  # Changed 'power' to 'modulus'
     monkeypatch.setattr('sys.stdin', StringIO(user_input))
 
     # Act
@@ -348,7 +348,7 @@ def test_calculator_unsupported_operation(monkeypatch, capsys):
 
     # Assert
     captured = capsys.readouterr()
-    assert "Unsupported calculation type: 'power'." in captured.out
+    assert "Unsupported calculation type: 'modulus'." in captured.out
     assert "Type 'help' to see the list of supported operations." in captured.out
 
 
