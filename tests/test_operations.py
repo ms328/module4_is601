@@ -389,3 +389,27 @@ def test_power_positive():
     # Assert
     assert result == expected_result, f"Expected {a} * {b} to be {expected_result}, got {result}"
 
+import pytest
+from app.operation import Operation
+
+def test_operation_modulus_valid():
+    assert Operation.modulus(10, 3) == 1
+    assert Operation.modulus(10.0, 4.0) == 2.0
+
+def test_operation_modulus_zero_raises_valueerror():
+    with pytest.raises(ValueError):
+        Operation.modulus(5, 0)
+
+import pytest
+from app.calculation import ModulusCalculation  # <-- use your actual class name
+
+import pytest
+from app.calculation import ModulusCalculation
+
+def test_modulus_calculation_valid():
+    calc = ModulusCalculation(10, 3)
+    assert calc.execute() == 1
+
+def test_modulus_calculation_zero_divisor_raises_zerodivisionerror():
+    with pytest.raises(ZeroDivisionError):
+        ModulusCalculation(7, 0).execute()

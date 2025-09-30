@@ -269,3 +269,5 @@ class ModulusCalculation(Calculation):
             raise ZeroDivisionError("Cannot perform modulus with divisor zero.")
         # Calls the modulus operation from the Operation module.
         return Operation.modulus(self.a, self.b)
+    
+  
